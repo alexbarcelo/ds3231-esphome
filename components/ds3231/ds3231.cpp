@@ -118,7 +118,7 @@ namespace esphome {
         .is_dst = false,  // not used
         .timestamp = 0    // overwritten by recalc_timestamp_utc(false)
       };
-      rtc_time.recalc_timestamp_utc(true);
+      rtc_time.recalc_timestamp_local(false);
       if (!rtc_time.is_valid()) {
         ESP_LOGE(TAG, "Invalid RTC time, not syncing to system clock.");
         return ESPTime{};
